@@ -15,12 +15,12 @@ public class AddMemberForm extends JFrame {
 
     public AddMemberForm() {
         setTitle("Add Member");
-        setSize(600, 600);
+        setSize(800, 800);  // Increased size
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
         // Load background image
-        ImageIcon backgroundImage = new ImageIcon("Images\\Background.gif");
+        ImageIcon backgroundImage = new ImageIcon("Images\\download (32).jpeg.jpg");
         JLabel backgroundLabel = new JLabel(backgroundImage);
         backgroundLabel.setLayout(new BorderLayout());
         setContentPane(backgroundLabel);
@@ -37,12 +37,15 @@ public class AddMemberForm extends JFrame {
         mainPanel.setBackground(new Color(0, 0, 0, 0));  // Transparent background for the panel
 
         GridBagConstraints gbc = new GridBagConstraints();
-        gbc.insets = new Insets(10, 10, 10, 10);
+        gbc.insets = new Insets(15, 15, 15, 15);  // Increased insets
         gbc.fill = GridBagConstraints.HORIZONTAL;
+
+        Font font = new Font("TIMES NEW ROMAN", Font.BOLD, 24);  // Increased font size
 
         // Header
         JLabel headerLabel = new JLabel("ADD MEMBER", SwingConstants.CENTER);
-        headerLabel.setFont(new Font("TIMES NEW ROMAN", Font.BOLD, 24));
+        headerLabel.setFont(font);
+        headerLabel.setForeground(Color.WHITE);
         gbc.gridwidth = 4; 
         gbc.gridx = 0;
         gbc.gridy = 0;
@@ -50,7 +53,10 @@ public class AddMemberForm extends JFrame {
 
         // Member ID
         JLabel memberIdText = new JLabel("Member ID:");
+        memberIdText.setFont(font);
+        memberIdText.setForeground(Color.WHITE);
         memberIdLabel = new JLabel(" ", SwingConstants.LEFT);
+        memberIdLabel.setFont(font);
         memberIdLabel.setForeground(Color.RED);
         gbc.gridwidth = 1;
         gbc.gridx = 0;
@@ -62,7 +68,10 @@ public class AddMemberForm extends JFrame {
 
         // Member Type
         JLabel memberTypeLabel = new JLabel("Member Type:");
+        memberTypeLabel.setFont(font);
+        memberTypeLabel.setForeground(Color.WHITE);
         memberTypeCombo = new JComboBox<>(new String[]{"Plus", "Regular"});
+        memberTypeCombo.setFont(font);
         gbc.gridx = 2;
         mainPanel.add(memberTypeLabel, gbc);
 
@@ -71,7 +80,10 @@ public class AddMemberForm extends JFrame {
 
         // First Name
         JLabel firstNameLabel = new JLabel("First Name:");
+        firstNameLabel.setFont(font);
+        firstNameLabel.setForeground(Color.WHITE);
         firstNameField = new JTextField(15);
+        firstNameField.setFont(font);
         gbc.gridx = 0;
         gbc.gridy = 2;
         mainPanel.add(firstNameLabel, gbc);
@@ -81,7 +93,10 @@ public class AddMemberForm extends JFrame {
 
         // Last Name
         JLabel lastNameLabel = new JLabel("Last Name:");
+        lastNameLabel.setFont(font);
+        lastNameLabel.setForeground(Color.WHITE);
         lastNameField = new JTextField(15);
+        lastNameField.setFont(font);
         gbc.gridx = 2;
         mainPanel.add(lastNameLabel, gbc);
 
@@ -90,7 +105,10 @@ public class AddMemberForm extends JFrame {
 
         // Phone Number
         JLabel phoneLabel = new JLabel("Phone Number:");
+        phoneLabel.setFont(font);
+        phoneLabel.setForeground(Color.WHITE);
         phoneNumberField = new JTextField(15);
+        phoneNumberField.setFont(font);
         gbc.gridx = 0;
         gbc.gridy = 3;
         mainPanel.add(phoneLabel, gbc);
@@ -100,7 +118,10 @@ public class AddMemberForm extends JFrame {
 
         // Email
         JLabel emailLabel = new JLabel("Email:");
+        emailLabel.setFont(font);
+        emailLabel.setForeground(Color.WHITE);
         emailField = new JTextField(15);
+        emailField.setFont(font);
         gbc.gridx = 2;
         mainPanel.add(emailLabel, gbc);
 
@@ -109,7 +130,10 @@ public class AddMemberForm extends JFrame {
 
         // Address
         JLabel addressLabel = new JLabel("Address:");
+        addressLabel.setFont(font);
+        addressLabel.setForeground(Color.WHITE);
         addressField = new JTextField(15);
+        addressField.setFont(font);
         gbc.gridx = 0;
         gbc.gridy = 4;
         mainPanel.add(addressLabel, gbc);
@@ -121,7 +145,10 @@ public class AddMemberForm extends JFrame {
 
         // Gender
         JLabel genderLabel = new JLabel("Gender:");
+        genderLabel.setFont(font);
+        genderLabel.setForeground(Color.WHITE);
         genderCombo = new JComboBox<>(new String[]{"Male", "Female"});
+        genderCombo.setFont(font);
         gbc.gridx = 0;
         gbc.gridy = 5;
         mainPanel.add(genderLabel, gbc);
@@ -131,7 +158,10 @@ public class AddMemberForm extends JFrame {
 
         // Amount Pay
         JLabel amountLabel = new JLabel("Amount Pay:");
+        amountLabel.setFont(font);
+        amountLabel.setForeground(Color.WHITE);
         amountField = new JTextField(15);
+        amountField.setFont(font);
         gbc.gridx = 2;
         mainPanel.add(amountLabel, gbc);
 
@@ -140,7 +170,10 @@ public class AddMemberForm extends JFrame {
 
         // Trainer
         JLabel trainerLabel = new JLabel("Trainer:");
+        trainerLabel.setFont(font);
+        trainerLabel.setForeground(Color.WHITE);
         trainerCombo = new JComboBox<>(new String[]{"Trainer 1", "Trainer 2", "Trainer 3"});
+        trainerCombo.setFont(font);
         gbc.gridx = 0;
         gbc.gridy = 6;
         mainPanel.add(trainerLabel, gbc);
@@ -150,7 +183,10 @@ public class AddMemberForm extends JFrame {
 
         // Register Date
         JLabel registerDateLabel = new JLabel("Register Date:");
+        registerDateLabel.setFont(font);
+        registerDateLabel.setForeground(Color.WHITE);
         registerDateField = new JFormattedTextField(new SimpleDateFormat("MMM dd, yyyy"));
+        registerDateField.setFont(font);
         registerDateField.setValue(new Date());
         gbc.gridx = 2;
         mainPanel.add(registerDateLabel, gbc);
@@ -160,6 +196,7 @@ public class AddMemberForm extends JFrame {
 
         // Save Button
         saveButton = new JButton("Save");
+        saveButton.setFont(font);
         saveButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 if (areFieldsFilled()) {
@@ -173,6 +210,7 @@ public class AddMemberForm extends JFrame {
 
         // Reset Button
         resetButton = new JButton("Reset");
+        resetButton.setFont(font);
         resetButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 resetFields();
@@ -181,6 +219,7 @@ public class AddMemberForm extends JFrame {
 
         // Clear Button
         clearButton = new JButton("Clear");
+        clearButton.setFont(font);
         clearButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 clearFields();
